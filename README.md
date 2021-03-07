@@ -1,7 +1,7 @@
 # Reservas de Hotel
 
 Estorias de usuário:
-Sendo o usuário no qual deseja de hóspedar, eu desejo:
+Sendo o usuário no qual deseja se hóspedar, eu desejo:
 
 - Visualizar as datas de check-in e check-out
 - Informar meus dados cadastrais e ficarem salvos
@@ -9,7 +9,8 @@ Sendo o usuário no qual deseja de hóspedar, eu desejo:
 - Informar quantos quartos
 - marcar hospedagem
 - cancelar hospedagem
-  Sendo o dono do estabelecimento, eu desejo:
+
+Sendo o dono do estabelecimento, eu desejo:
 - Os dados dos clientes (nome, email)
 - visualizar os check-in e check-out dos hóspedes
 - visualizar quais quartos o cliente selecionou
