@@ -1,5 +1,15 @@
 # Reservas de Hotel
 
+Endpoints:
+- Escolher uma data e hora de check-in e check-out, o hotel que deseja se hospedar, o número do quarto ("/painel/reservas/novo/")
+- Visualizar as reservas feitas pelo usuário ("/painel")
+- Deletar uma reserva ("/painel/<uuid>/delete")
+- Login do usuário. ("/accounts/login/")
+- Cadastro do usuário. ("/accounts/signup/")
+- Usuário esqueceu a senha. ("/accounts/password/reset/")
+- Funcionalidades do Admin(já implementadas pelo django) ("/admin")
+
+
 Estorias de usuário:
 Sendo o usuário no qual deseja se hóspedar, eu desejo:
 
