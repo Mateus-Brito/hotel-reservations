@@ -1,0 +1,42 @@
+{% extends "base.html" %} {% block content %}
+<div class="container-fluid" style="min-height: calc(100vh - 94px)">
+  <div class="row justify-content-center pt-60 pb-60">
+    <div class="col-10 d-flex">
+      <div>
+        <h4>Suas reservas</h4>
+        <p>Resultados encontrados</p>
+      </div>
+      <div class="ml-auto">
+        <a href="/painel/reservas/novo/" class="btn btn-primary py-7 rounded-lg text-white">Novo</a>
+      </div>
+    </div>
+    <div class="col-md-10">
+      {% if reservations|length == 0 %}
+      <p class="alert-info p-2 text-center">Nenhum resultado encontrado</p>
+      {% endif %}
+      
+      {% for reservation in reservations %}
+        <div class="row mb-20">
+   
+          <div class="col-md-8 mt-3">
+            <div class="card">
+              <div class="card-horizontal">
+                <div class="card-body">
+                    Checkin: <small class="text-muted">{{reservation.checkin_date}}</small><br />
+                    Checkout: <small class="text-muted">{{reservation.checkout_date}}</small><br />
+                    Hotel: <small class="text-muted">{{reservation.hotel}}</small><br />
+                    Número do quarto: <small class="text-muted">{{reservation.room_number}}</small><br />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <a href="{% url 'reservations:delete' id=reservation.id %}">Remover</a>
+          </div>
+        </div>
+      
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,9 +1,35 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Hotel Reservations</title>
-    </head>
-    <body>
-        <p>Hello world</p>
-    </body>
-</html>
+{% extends 'base.html' %} {% load static %}
+{% block nav %} {% endblock %}
+{% block content %}
+<style>
+  .landing {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+  }
+  .landing h2 {
+    font-family: "Roboto Condensed";
+    font-weight: bold;
+    color: #2b2b2b;
+  }
+</style>
+<section class="landing min-vh-100">
+  <div class="container">
+      {% include "nav.html" %}
+    <div class="row mt-60">
+      <div class="col-12 col-md-6 pt-60">
+        <h2 class="h3">Reservas online é aqui.</h2>
+        <hr class="m-0" style="width: 40px; color: #2484ec; border-width: 3px" />
+        <p class="mt-20 mb-20">No <i>HotelAqui</i> você pode reservar sua estadia online, isso mesmo, só é preciso de uma conta e escolher o período.</p>
+        <a class="btn btn-primary rounded-lg py-10" href="{% url 'account_login' %}">Experimente agora</a>
+      </div>
+      <div class="col-md-6 text-center d-none d-sm-block">
+        <img class="w-100 px-60 pt-60" src="{% static 'img/best_place.svg' %}" />
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

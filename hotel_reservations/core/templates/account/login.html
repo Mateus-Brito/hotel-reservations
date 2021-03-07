@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+<div class="container" style="min-height: calc(100vh - 94px)">
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-6 col-12 mt-60">
+      <form class="login mt-60 text-right" method="POST" action="{% url 'account_login' %}">
+        <h4 class="mb-30">Faça login para continuar</h4>
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="form-group">{{ field.label_tag }} {{ field }}</div>
+        {% endfor %}
+
+        {% for error in form.non_field_errors %}
+        <div class="alert alert-danger">
+            <strong>{{ error|escape }}</strong>
+        </div>
+        {% endfor %}
+
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <a class="btn btn-primary py-7 rounded-lg" href="{% url 'account_reset_password' %}"
+          >Esqueceu a senha?</a
+        >
+        <button class="btn btn-primary py-7 rounded-lg" type="submit">Login</button>
+        <br />
+        <a class="btn" href="{% url 'account_signup' %}">Não possuí uma conta?</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
